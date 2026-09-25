@@ -1,0 +1,19 @@
+{
+  "name": "rpg-poo-javascript",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sistema de Batalha de RPG por Turnos em JavaScript (POO)",
+  "main": "src/Personagem.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
+  "keywords": [
+    "javascript",
+    "poo",
+    "rpg",
+    "game"
+  ],
+  "author": "Geraldez Ribeiro de Medeiros Junior",
+  "license": "ISC"
+}

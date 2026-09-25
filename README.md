@@ -16,12 +16,19 @@ O sistema simula um combate estratégico onde diferentes classes de personagens 
 
 Principais Conceitos de POO Aplicados:
 
-Classes e Instâncias: Modelagem dos combatentes e gerenciador de batalhas.
-
-Herança: Utilização de uma classe base (Personagem) estendida por classes especializadas.
-
-Encapsulamento: Proteção e controle do estado interno dos objetos (como vida e mana).
-
-Polimorfismo: Comportamentos de ataque e habilidades especiais sobrescritos conforme a classe do combatente.
+- Classes e Instâncias: Modelagem dos combatentes e gerenciador de batalhas.
+- Herança: Utilização de uma classe base (Personagem) estendida por classes especializadas.
+- Encapsulamento: Proteção e controle do estado interno dos objetos (como vida e mana).
+- Polimorfismo: Comportamentos de ataque e habilidades especiais sobrescritos conforme a classe do combatente.
 
 🚀 Como Executar
+
+1. Certifique-se de ter o **Node.js** instalado na sua máquina (versão 14 ou superior).
+2. Abra o terminal na pasta do projeto (`d:\prog_web`).
+3. Execute o comando de teste/demonstração:
+
+```bash
+node index.js
+# ou
+npm start
+```
