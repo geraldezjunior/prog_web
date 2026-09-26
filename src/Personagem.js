@@ -1,5 +1,4 @@
 export default class Personagem {
-  // Atributos Privados (Encapsulamento)
   #nome;
   #vida;
   #vidaMaxima;
@@ -11,7 +10,7 @@ export default class Personagem {
   constructor(nome, vida, mana, forca = 10, defesa = 5) {
     if (new.target === Personagem) {
       throw new Error(
-        "A classe 'Personagem' é abstrata e não pode ser instanciada diretamente.",
+        "A classe 'Personagem' é abstrata e não pode ser instanciada diretamente."
       );
     }
 
@@ -52,8 +51,6 @@ export default class Personagem {
     return this.#defesa;
   }
 
-  // --- Métodos Concretos ---
-
   estaVivo() {
     return this.#vida > 0;
   }
@@ -64,11 +61,11 @@ export default class Personagem {
       return 0;
     }
 
-    const danoReal = Math.max(1, danoBruto - this.#defesa);
+    const danoReal = Math.max(1, danoBruto - this.defesa);
     this.#vida = Math.max(0, this.#vida - danoReal);
 
     console.log(
-      `${this.#nome} recebeu ${danoReal} de dano! (Vida: ${this.#vida}/${this.#vidaMaxima})`,
+      `${this.#nome} recebeu ${danoReal} de dano! (Vida: ${this.#vida}/${this.#vidaMaxima})`
     );
 
     if (!this.estaVivo()) {
@@ -83,7 +80,7 @@ export default class Personagem {
     const vidaAnterior = this.#vida;
     this.#vida = Math.min(this.#vidaMaxima, this.#vida + quantidade);
     console.log(
-      `✨ ${this.#nome} foi curado em ${this.#vida - vidaAnterior}! (Vida: ${this.#vida}/${this.#vidaMaxima})`,
+      `✨ ${this.#nome} foi curado em ${this.#vida - vidaAnterior}! (Vida: ${this.#vida}/${this.#vidaMaxima})`
     );
   }
 
@@ -100,7 +97,19 @@ export default class Personagem {
     const manaAnterior = this.#mana;
     this.#mana = Math.min(this.#manaMaxima, this.#mana + quantidade);
     console.log(
-      `🔹 ${this.#nome} regenerou ${this.#mana - manaAnterior} de mana!`,
+      `🔹 ${this.#nome} regenerou ${this.#mana - manaAnterior} de mana!`
+    );
+  }
+
+  atacar(alvo) {
+    throw new Error(
+      "O método abstrato 'atacar()' deve ser implementado pela sub-classe."
+    );
+  }
+
+  usarHabilidadeEspecial(alvo) {
+    throw new Error(
+      "O método abstrato 'usarHabilidadeEspecial()' deve ser implementado pela sub-classe."
     );
   }
 
@@ -110,8 +119,8 @@ export default class Personagem {
       vida: `${this.#vida}/${this.#vidaMaxima}`,
       mana: `${this.#mana}/${this.#manaMaxima}`,
       forca: this.#forca,
-      defesa: this.#defesa,
-      status: this.estaVivo() ? 'Vivo' : 'Derrotado',
+      defesa: this.defesa,
+      status: this.estaVivo() ? "Vivo" : "Derrotado"
     };
   }
 
